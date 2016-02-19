@@ -8,18 +8,12 @@ import (
 )
 
 // Logger returns a baa middleware for log http access
-func Logger() baa.MiddlewareFunc {
-	return func(h baa.HandlerFunc) baa.HandlerFunc {
-		return func(c *baa.Context) error {
-			start := time.Now()
+func Logger() baa.HandlerFunc {
+	return func(c *baa.Context) {
+		start := time.Now()
 
-			if err := h(c); err != nil {
-				c.Error(err)
-			}
+		c.Next()
 
-			c.Baa().Logger().Printf("log %s %s %v", c.Req.Method, c.Req.RequestURI, time.Since(start))
-
-			return nil
-		}
+		c.Baa().Logger().Printf("%s %s %v %v", c.Req.Method, c.Req.RequestURI, c.Resp.Status(), time.Since(start))
 	}
 }
