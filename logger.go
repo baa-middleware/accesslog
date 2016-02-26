@@ -14,6 +14,6 @@ func Logger() baa.HandlerFunc {
 
 		c.Next()
 
-		c.Baa().Logger().Printf("%s %s %v %v", c.Req.Method, c.Req.RequestURI, c.Resp.Status(), time.Since(start))
+		c.Baa().Logger().Printf("%s %s %s %v %v", c.RemoteAddr(), c.Req.Method, c.Req.RequestURI, c.Resp.Status(), time.Since(start))
 	}
 }
