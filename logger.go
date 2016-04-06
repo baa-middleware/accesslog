@@ -4,7 +4,7 @@ package logger
 import (
 	"time"
 
-	"github.com/go-baa/baa"
+	"gopkg.in/baa.v1"
 )
 
 // Logger returns a baa middleware for log http access
