@@ -1,5 +1,5 @@
-// Package logger provider a baa middleware for log http access.
-package logger
+// Package accesslog provider a baa middleware for log http access.
+package accesslog
 
 import (
 	"time"
@@ -7,8 +7,8 @@ import (
 	"gopkg.in/baa.v1"
 )
 
-// Logger returns a baa middleware for log http access
-func Logger() baa.HandlerFunc {
+// Accesslog returns a baa middleware for log http access
+func Accesslog() baa.HandlerFunc {
 	return func(c *baa.Context) {
 		start := time.Now()
 
