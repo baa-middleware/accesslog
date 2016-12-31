@@ -7,8 +7,8 @@ import (
 	"gopkg.in/baa.v1"
 )
 
-// Accesslog returns a baa middleware for log http access
-func Accesslog() baa.HandlerFunc {
+// Logger returns a baa middleware for log http access
+func Logger() baa.HandlerFunc {
 	return func(c *baa.Context) {
 		start := time.Now()
 
