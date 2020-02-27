@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	baa "gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 // Logger returns a baa middleware for log http access
